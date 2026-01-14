@@ -75,7 +75,7 @@ export default function ProductoDestacado({
                 <a href={ctaHref}>{ctaText}</a>
               </Button>
               <Button variant="outline" size="lg" className="text-base sm:text-lg px-6 sm:px-8 border-2 hover:border-primary w-full sm:w-auto transition-all duration-300 hover:scale-105" asChild>
-                <a href="#caracteristicas">Características</a>
+                <a href="#presencia-y-alcance">Presencia y alcance</a>
               </Button>
             </div>
           </div>

@@ -10,7 +10,7 @@ interface FooterWithPrismicProps {
 export default function FooterWithPrismic({ className, config }: FooterWithPrismicProps) {
   const currentYear = new Date().getFullYear()
 
-  const footerTexto = config?.footerTexto || "Descripción breve de la empresa o producto."
+  const footerTexto = config?.footerTexto || "Distribución oficial, licenciamiento y posicionamiento estratégico en canales de alto alcance."
   const contacto = config?.footerContacto
   const email = contacto?.email || "email@ejemplo.com"
   const telefono = contacto?.telefono || "+1 (555) 123-4567"
@@ -27,7 +27,7 @@ export default function FooterWithPrismic({ className, config }: FooterWithPrism
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           {/* Columna 1: Logo y descripción */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-[#ff7300] [text-shadow:_2px_2px_4px_rgba(0,0,0,0.3)]">Logo</h3>
+            <h3 className="text-lg font-semibold text-[#ff7300] [text-shadow:_2px_2px_4px_rgba(0,0,0,0.3)]">Güish</h3>
             <p className="text-sm text-muted-foreground">
               {footerTexto}
             </p>
@@ -43,13 +43,13 @@ export default function FooterWithPrismic({ className, config }: FooterWithPrism
                 </a>
               </li>
               <li>
-                <a href="#partners" className="text-[#ff7300] hover:opacity-80 transition-opacity [text-shadow:_2px_2px_4px_rgba(0,0,0,0.3)]">
+                <a href="#partners-titulo" className="text-[#ff7300] hover:opacity-80 transition-opacity [text-shadow:_2px_2px_4px_rgba(0,0,0,0.3)]">
                   Partners
                 </a>
               </li>
               <li>
-                <a href="#caracteristicas" className="text-[#ff7300] hover:opacity-80 transition-opacity [text-shadow:_2px_2px_4px_rgba(0,0,0,0.3)]">
-                  Características
+                <a href="#presencia-y-alcance" className="text-[#ff7300] hover:opacity-80 transition-opacity [text-shadow:_2px_2px_4px_rgba(0,0,0,0.3)]">
+                  Presencia y alcance
                 </a>
               </li>
             </ul>

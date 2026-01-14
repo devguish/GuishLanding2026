@@ -1,10 +1,9 @@
 import * as React from "react"
-import { Content } from "@prismicio/react"
 import { SliceComponentProps } from "@prismicio/react"
 import VideoSection from "@/app/components/VideoSection"
 import * as prismic from "@prismicio/client"
 
-export type VideoSectionSlice = Content.VideoSectionSliceSlice
+export type VideoSectionSlice = prismic.Content.VideoSectionSlice
 
 export default function VideoSectionSliceComponent({
   slice,

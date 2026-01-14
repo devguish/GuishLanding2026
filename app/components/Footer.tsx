@@ -19,9 +19,9 @@ export default function Footer({ className }: FooterProps) {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           {/* Columna 1: Logo y descripción */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-[#ff7300] [text-shadow:_2px_2px_4px_rgba(0,0,0,0.3)]">Logo</h3>
+            <h3 className="text-lg font-semibold text-[#ff7300] [text-shadow:_2px_2px_4px_rgba(0,0,0,0.3)]">Güish</h3>
             <p className="text-sm text-muted-foreground">
-              Descripción breve de la empresa o producto.
+              Distribución oficial, licenciamiento y posicionamiento estratégico en canales de alto alcance.
             </p>
           </div>
 
@@ -40,8 +40,8 @@ export default function Footer({ className }: FooterProps) {
                 </a>
               </li>
               <li>
-                <a href="#caracteristicas" className="text-[#ff7300] hover:opacity-80 transition-opacity [text-shadow:_2px_2px_4px_rgba(0,0,0,0.3)]">
-                  Características
+                <a href="#presencia-y-alcance" className="text-[#ff7300] hover:opacity-80 transition-opacity [text-shadow:_2px_2px_4px_rgba(0,0,0,0.3)]">
+                  Presencia y alcance
                 </a>
               </li>
             </ul>

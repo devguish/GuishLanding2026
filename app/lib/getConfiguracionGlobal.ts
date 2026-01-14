@@ -46,22 +46,33 @@ export async function getConfiguracionGlobal(): Promise<ConfiguracionGlobalData 
       return null;
     }
 
+    // Los campos logo y footer_contacto fueron movidos al tipo 'landing'
+    // Por lo tanto, no están disponibles en configuracion_global
+    const data = document.data as prismic.Content.ConfiguracionGlobalDocumentData & {
+      logo?: prismic.ImageField<never>;
+      footer_contacto?: {
+        telefono?: string;
+        email?: string;
+        direccion?: string;
+      };
+    };
+
     return {
-      logo: document.data.logo ? {
-        url: document.data.logo.url || '',
-        alt: document.data.logo.alt || 'Logo',
+      logo: data.logo ? {
+        url: data.logo.url || '',
+        alt: data.logo.alt || 'Logo',
       } : undefined,
-      menuItems: document.data.menu_items?.map((item: any) => ({
+      menuItems: document.data.menu_items?.map((item) => ({
         texto: (item.texto as string) || '',
         enlace: prismic.asLink(item.enlace) || '#',
       })) || [],
       footerTexto: prismic.asText(document.data.footer_texto) || '',
-      footerContacto: document.data.footer_contacto ? {
-        telefono: (document.data.footer_contacto.telefono as string) || undefined,
-        email: (document.data.footer_contacto.email as string) || undefined,
-        direccion: (document.data.footer_contacto.direccion as string) || undefined,
+      footerContacto: data.footer_contacto ? {
+        telefono: data.footer_contacto.telefono || undefined,
+        email: data.footer_contacto.email || undefined,
+        direccion: data.footer_contacto.direccion || undefined,
       } : undefined,
-      redesSociales: document.data.redes_sociales?.map((red: any) => ({
+      redesSociales: document.data.redes_sociales?.map((red) => ({
         plataforma: red.plataforma || '',
         enlace: prismic.asLink(red.enlace) || '#',
       })) || [],

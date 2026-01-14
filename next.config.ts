@@ -4,9 +4,9 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'images.prismic.io',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "images.prismic.io",
+        pathname: "/**",
       },
     ],
   },

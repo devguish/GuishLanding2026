@@ -17,8 +17,8 @@ export default function Header({ className }: HeaderProps) {
 
   const menuItems = [
     { label: "Inicio", href: "#inicio" },
-    { label: "Partners", href: "#partners" },
-    { label: "Sobre nosotros", href: "#caracteristicas" },
+    { label: "Partners", href: "#partners-titulo" },
+    { label: "Presencia y alcance", href: "#presencia-y-alcance" },
     { label: "Contacto", href: "#contacto" },
   ]
 
@@ -102,7 +102,7 @@ export default function Header({ className }: HeaderProps) {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isMenuOpen ? <X className="h-6 w-6 text-muted-foreground" /> : <Menu className="h-6 w-6 text-muted-foreground" />}
           </Button>
         </div>
       </div>

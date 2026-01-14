@@ -20,7 +20,7 @@ export interface RedSocial {
 export interface LandingPageData {
   id: string;
   uid: string;
-  slices: any[];
+  slices: prismic.SliceZone<prismic.Content.LandingDocumentDataSlicesSlice>;
   logo?: {
     url: string;
     alt: string;
@@ -48,6 +48,24 @@ export async function getLandingPage(uid: string = 'home'): Promise<LandingPageD
       return null;
     }
 
+    // Extender el tipo para incluir campos que pueden no estar en los tipos generados
+    const data = document.data as prismic.Content.LandingDocumentData & {
+      menu_items?: prismic.GroupField<{
+        texto?: string;
+        enlace?: prismic.LinkField;
+      }>;
+      footer_texto?: prismic.RichTextField;
+      footer_contacto?: {
+        telefono?: string;
+        email?: string;
+        direccion?: string;
+      };
+      redes_sociales?: prismic.GroupField<{
+        plataforma?: string;
+        enlace?: prismic.LinkField;
+      }>;
+    };
+
     return {
       id: document.id,
       uid: document.uid || uid,
@@ -56,17 +74,17 @@ export async function getLandingPage(uid: string = 'home'): Promise<LandingPageD
         url: document.data.logo.url || '',
         alt: document.data.logo.alt || 'Logo',
       } : undefined,
-      menuItems: document.data.menu_items?.map((item: any) => ({
+      menuItems: data.menu_items?.map((item) => ({
         texto: (item.texto as string) || '',
         enlace: prismic.asLink(item.enlace) || '#',
       })) || [],
-      footerTexto: prismic.asText(document.data.footer_texto) || '',
-      footerContacto: document.data.footer_contacto ? {
-        telefono: (document.data.footer_contacto.telefono as string) || undefined,
-        email: (document.data.footer_contacto.email as string) || undefined,
-        direccion: (document.data.footer_contacto.direccion as string) || undefined,
+      footerTexto: data.footer_texto ? prismic.asText(data.footer_texto) || '' : '',
+      footerContacto: data.footer_contacto ? {
+        telefono: data.footer_contacto.telefono || undefined,
+        email: data.footer_contacto.email || undefined,
+        direccion: data.footer_contacto.direccion || undefined,
       } : undefined,
-      redesSociales: document.data.redes_sociales?.map((red: any) => ({
+      redesSociales: data.redes_sociales?.map((red) => ({
         plataforma: red.plataforma || '',
         enlace: prismic.asLink(red.enlace) || '#',
       })) || [],

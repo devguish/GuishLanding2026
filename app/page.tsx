@@ -5,6 +5,7 @@ import { getLandingPage } from './lib/getLandingPage';
 import { getConfiguracionGlobal } from './lib/getConfiguracionGlobal';
 import { SliceZone } from '@prismicio/react';
 import { components } from '@/slices';
+import * as prismic from '@prismicio/client';
 
 // Componentes por defecto (fallback si no hay Prismic)
 import Hero from './components/Hero';
@@ -26,8 +27,8 @@ export default async function Home() {
   if (landingPage && landingPage.slices && landingPage.slices.length > 0) {
     // Buscar el slice de configuración de fondo
     const fondoSlice = landingPage.slices.find(
-      (slice: any) => slice.slice_type === 'configuracion_fondo'
-    )
+      (slice) => slice.slice_type === 'configuracion_fondo'
+    ) as prismic.Content.ConfiguracionFondoSlice | undefined;
     
     // Extraer datos de fondo del slice
     const fondoConfig = fondoSlice ? {
