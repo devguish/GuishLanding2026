@@ -18,7 +18,9 @@ export default function VideoSection({
     
     let embedBaseUrl = ""
     let videoId = ""
-    let params = "autoplay=1&mute=1&loop=1" // Autoplay con mute (requerido por navegadores)
+    // Autoplay con mute (requerido por navegadores)
+    // Nota: En dispositivos móviles (iOS/Android) el autoplay puede estar bloqueado por políticas del navegador
+    let params = "autoplay=1&mute=1&loop=1&playsinline=1" // playsinline ayuda en iOS
     
     // YouTube
     if (url.includes("youtube.com/watch")) {
@@ -34,7 +36,7 @@ export default function VideoSection({
     else if (url.includes("vimeo.com/")) {
       videoId = url.split("vimeo.com/")[1]?.split("?")[0]
       embedBaseUrl = `https://player.vimeo.com/video/${videoId}`
-      params = "autoplay=1&mute=1&loop=1" // Vimeo también requiere mute para autoplay
+      params = "autoplay=1&mute=1&loop=1&background=1" // background=1 ayuda en móviles
     }
     // Si ya es una URL de embed, agregar parámetros
     else if (url.includes("embed") || url.includes("player.vimeo.com")) {
@@ -69,6 +71,7 @@ export default function VideoSection({
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             loading="eager"
+            playsInline
           />
         </div>
       </div>
