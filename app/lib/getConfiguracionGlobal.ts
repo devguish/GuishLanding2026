@@ -36,9 +36,12 @@ export async function getConfiguracionGlobal(): Promise<ConfiguracionGlobalData 
     let document = null;
     try {
       document = await client.getSingle('configuracion_global');
-    } catch (error) {
-      // Si el documento no existe o hay error, retornar null
-      console.warn('No se pudo obtener configuracion_global de Prismic:', error);
+    } catch (error: any) {
+      // Si el documento no existe o hay error, retornar null silenciosamente
+      // Solo loguear en desarrollo para no llenar los logs de producción
+      if (process.env.NODE_ENV === 'development') {
+        console.warn('No se pudo obtener configuracion_global de Prismic:', error?.message || error);
+      }
       return null;
     }
     

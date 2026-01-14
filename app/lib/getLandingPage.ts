@@ -38,9 +38,12 @@ export async function getLandingPage(uid: string = 'home'): Promise<LandingPageD
     let document = null;
     try {
       document = await client.getByUID('landing', uid);
-    } catch (error) {
-      // Si el documento no existe o hay error, retornar null
-      console.warn(`No se pudo obtener landing page '${uid}' de Prismic:`, error);
+    } catch (error: any) {
+      // Si el documento no existe o hay error, retornar null silenciosamente
+      // Solo loguear en desarrollo para no llenar los logs de producción
+      if (process.env.NODE_ENV === 'development') {
+        console.warn(`No se pudo obtener landing page '${uid}' de Prismic:`, error?.message || error);
+      }
       return null;
     }
     
