@@ -1,0 +1,77 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"titulo_seccion": {
+				"__TYPE__": "FieldContent",
+				"value": "quite",
+				"type": "Text"
+			},
+			"subtitulo": {
+				"__TYPE__": "FieldContent",
+				"value": "cage",
+				"type": "Text"
+			},
+			"caracteristicas": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"descripcion",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Eu veniam ut ex esse ipsum sint ex dolore nulla irure veniam et do commodo id. Eiusmod deserunt qui dolor culpa eiusmod fugiat sunt id."
+											}
+										}
+									]
+								}
+							],
+							[
+								"icono",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43",
+										"width": 4024,
+										"height": 4024
+									},
+									"url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43",
+									"width": 4024,
+									"height": 4024,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"alt": "my",
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"titulo",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "master",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

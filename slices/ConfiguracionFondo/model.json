@@ -1,0 +1,48 @@
+{
+  "id": "configuracion_fondo",
+  "type": "SharedSlice",
+  "name": "Configuración de Fondo",
+  "description": "Configuración del fondo de la página (color, imagen o gradiente)",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "tipo_fondo": {
+          "type": "Select",
+          "config": {
+            "label": "Tipo de Fondo",
+            "placeholder": "",
+            "options": [
+              "Color",
+              "Imagen",
+              "Gradiente"
+            ],
+            "default_value": "Gradiente"
+          }
+        },
+        "color_fondo": {
+          "type": "Text",
+          "config": {
+            "label": "Color de Fondo (hexadecimal)",
+            "placeholder": "#cebca5"
+          }
+        },
+        "imagen_fondo": {
+          "type": "Image",
+          "config": {
+            "label": "Imagen de Fondo",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
+

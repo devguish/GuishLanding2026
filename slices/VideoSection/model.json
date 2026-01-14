@@ -1,0 +1,30 @@
+{
+  "id": "video_section",
+  "type": "SharedSlice",
+  "name": "Video Promocional",
+  "description": "Video de YouTube o Vimeo que se reproduce automáticamente",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "url_video": {
+          "type": "Link",
+          "config": {
+            "label": "URL de video",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

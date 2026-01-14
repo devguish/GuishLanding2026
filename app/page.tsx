@@ -1,65 +1,135 @@
-import Image from "next/image";
+import HeaderWithPrismic from './components/HeaderWithPrismic';
+import FooterWithPrismic from './components/FooterWithPrismic';
+import BackgroundProvider from './components/BackgroundProvider';
+import { getLandingPage } from './lib/getLandingPage';
+import { getConfiguracionGlobal } from './lib/getConfiguracionGlobal';
+import { SliceZone } from '@prismicio/react';
+import { components } from '@/slices';
 
-export default function Home() {
+// Componentes por defecto (fallback si no hay Prismic)
+import Hero from './components/Hero';
+import SeccionContenido from './components/SeccionContenido';
+import ProductoDestacado from './components/ProductoDestacado';
+import VideoSection from './components/VideoSection';
+import GridPartners from './components/GridPartners';
+import GridCaracteristicas from './components/GridCaracteristicas';
+import SeccionInformativa from './components/SeccionInformativa';
+
+export default async function Home() {
+  // Intentar obtener datos de Prismic
+  const [landingPage, config] = await Promise.all([
+    getLandingPage('home').catch(() => null),
+    getConfiguracionGlobal().catch(() => null),
+  ]);
+
+  // Si hay datos de Prismic, usar SliceZone para renderizar dinámicamente
+  if (landingPage && landingPage.slices && landingPage.slices.length > 0) {
+    // Buscar el slice de configuración de fondo
+    const fondoSlice = landingPage.slices.find(
+      (slice: any) => slice.slice_type === 'configuracion_fondo'
+    )
+    
+    // Extraer datos de fondo del slice
+    const fondoConfig = fondoSlice ? {
+      tipo: (fondoSlice.primary?.tipo_fondo as string) || 'Gradiente',
+      color: (fondoSlice.primary?.color_fondo as string) || undefined,
+      imagen: fondoSlice.primary?.imagen_fondo?.url || undefined,
+    } : undefined
+
+    // Usar datos de la landing page (tiene prioridad sobre config global)
+    const headerConfig = {
+      logo: landingPage.logo || config?.logo,
+      menuItems: landingPage.menuItems && landingPage.menuItems.length > 0 
+        ? landingPage.menuItems 
+        : config?.menuItems,
+    };
+
+    const footerConfig = {
+      footerTexto: landingPage.footerTexto || config?.footerTexto,
+      footerContacto: landingPage.footerContacto || config?.footerContacto,
+      redesSociales: landingPage.redesSociales && landingPage.redesSociales.length > 0
+        ? landingPage.redesSociales
+        : config?.redesSociales,
+    };
+
+    return (
+      <BackgroundProvider fondoConfig={fondoConfig}>
+        <div className="flex min-h-screen flex-col">
+          <HeaderWithPrismic config={headerConfig} />
+          <main className="flex-1">
+            <SliceZone slices={landingPage.slices} components={components} />
+          </main>
+          <FooterWithPrismic config={footerConfig} />
+        </div>
+      </BackgroundProvider>
+    );
+  }
+
+  // Fallback: usar componentes hardcodeados si no hay Prismic
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <BackgroundProvider>
+      <div className="flex min-h-screen flex-col">
+        <HeaderWithPrismic config={config} />
+        <main className="flex-1">
+        {/* Hero Section */}
+        <Hero
+          title="Transforma tu Negocio"
+          subtitle="Soluciones innovadoras que impulsan el crecimiento y la eficiencia de tu empresa"
+          ctaText="Comenzar ahora"
+          ctaHref="#contacto"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+
+        {/* Sección Contenido 1 - Izquierda */}
+        <SeccionContenido
+          titulo="Nuestra Solución"
+          contenido="Ofrecemos una plataforma completa diseñada para optimizar tus procesos y aumentar la productividad. Con herramientas intuitivas y tecnología de vanguardia, ayudamos a tu equipo a alcanzar sus objetivos más rápido."
+          alineacion="izquierda"
+        />
+
+        {/* Producto Destacado */}
+        <ProductoDestacado
+          titulo="Producto Estrella"
+          descripcion="Descubre nuestro producto más innovador, diseñado con las últimas tecnologías para ofrecerte una experiencia excepcional. Perfecto para empresas que buscan la excelencia."
+          ctaText="Ver más detalles"
+          ctaHref="#producto"
+        />
+
+        {/* Video Section */}
+        <VideoSection
+          videoUrl="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+          title="Video promocional"
+        />
+
+        {/* Grid de Partners */}
+        <GridPartners
+          titulo="Nuestros Partners"
+          subtitulo="Trabajamos con las mejores empresas del sector"
+        />
+
+        {/* Grid de Características */}
+        <GridCaracteristicas
+          titulo="Características Principales"
+          subtitulo="Todo lo que necesitas para tener éxito en un solo lugar"
+        />
+
+        {/* Sección Contenido 2 - Derecha */}
+        <SeccionContenido
+          titulo="Tecnología de Vanguardia"
+          contenido="Nuestro sistema incluye funcionalidades avanzadas que se adaptan a las necesidades específicas de tu industria. Desde automatización de tareas hasta análisis en tiempo real, todo en un solo lugar."
+          alineacion="derecha"
+        />
+
+        {/* Sección Informativa */}
+        <SeccionInformativa
+          titulo="¿Listo para comenzar?"
+          contenido="Únete a miles de empresas que ya están transformando su negocio con nuestras soluciones. Nuestro equipo está listo para ayudarte a alcanzar tus objetivos."
+          ctaText="Contactar ahora"
+          ctaHref="#contacto"
+          mostrarCTA={true}
+        />
       </main>
-    </div>
+      <FooterWithPrismic config={config} />
+      </div>
+    </BackgroundProvider>
   );
 }

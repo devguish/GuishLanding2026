@@ -1,0 +1,66 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"titulo": {
+				"__TYPE__": "FieldContent",
+				"value": "our",
+				"type": "Text"
+			},
+			"contenido": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Exercitation elit ut reprehenderit enim officia dolor aute et velit anim eu culpa. Cillum laboris dolor Lorem aliquip minim laboris mollit quis elit."
+						}
+					}
+				]
+			},
+			"imagen": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea",
+					"width": 5000,
+					"height": 4613
+				},
+				"url": "https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea",
+				"width": 5000,
+				"height": 4613,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"alt": "grew",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"posicion_imagen": {
+				"__TYPE__": "FieldContent",
+				"value": "izquierda",
+				"type": "Select"
+			},
+			"texto_boton": {
+				"__TYPE__": "FieldContent",
+				"value": "air",
+				"type": "Text"
+			},
+			"enlace_boton": {
+				"key": "92ac4ac2-58ae-467c-926e-37e5b96b470c",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev"
+				}
+			}
+		},
+		"items": []
+	}
+]

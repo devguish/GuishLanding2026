@@ -1,0 +1,77 @@
+{
+  "id": "grid_caracteristicas",
+  "type": "SharedSlice",
+  "name": "Bloque Tiendas",
+  "description": "Grid con características, beneficios o información sobre la empresa",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "titulo_seccion": {
+          "type": "Text",
+          "config": {
+            "label": "Título de la Sección",
+            "placeholder": ""
+          }
+        },
+        "subtitulo": {
+          "type": "Text",
+          "config": {
+            "label": "Subtitulo",
+            "placeholder": ""
+          }
+        },
+        "caracteristicas": {
+          "type": "Group",
+          "config": {
+            "label": "Caracteristicas",
+            "repeat": true,
+            "fields": {
+              "titulo": {
+                "type": "Text",
+                "config": {
+                  "label": "Título de la Característica",
+                  "placeholder": ""
+                }
+              },
+              "descripcion": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Descripción de la Característica",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "icono": {
+                "type": "Image",
+                "config": {
+                  "label": "Icono",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "enlace": {
+                "type": "Link",
+                "config": {
+                  "label": "Enlace",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": false,
+                  "repeat": false
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

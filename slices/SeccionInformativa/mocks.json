@@ -1,0 +1,53 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"titulo": {
+				"__TYPE__": "FieldContent",
+				"value": "horse",
+				"type": "Text"
+			},
+			"contenido": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "In laborum enim occaecat ex velit et laborum velit cillum dolor culpa cillum excepteur culpa mollit."
+						}
+					}
+				]
+			},
+			"imagen": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1",
+					"width": 5616,
+					"height": 3744
+				},
+				"url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1",
+				"width": 5616,
+				"height": 3744,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"alt": "show",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"posicion_imagen": {
+				"__TYPE__": "FieldContent",
+				"value": "Izquierda",
+				"type": "Select"
+			}
+		},
+		"items": []
+	}
+]

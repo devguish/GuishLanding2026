@@ -1,0 +1,135 @@
+{
+  "format": "custom",
+  "id": "configuracion_global",
+  "label": "configuracion_global",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID"
+        }
+      },
+      "tipo_fondo": {
+        "type": "Select",
+        "config": {
+          "label": "Tipo de Fondo",
+          "placeholder": "",
+          "options": ["Color", "Imagen", "Gradiente"],
+          "default_value": "Gradiente"
+        }
+      },
+      "color_fondo": {
+        "type": "Text",
+        "config": {
+          "label": "Color de Fondo (hexadecimal)",
+          "placeholder": "#cebca5"
+        }
+      },
+      "imagen_fondo": {
+        "type": "Image",
+        "config": {
+          "label": "Imagen de Fondo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "menu_items": {
+        "type": "Group",
+        "config": {
+          "label": "menu_items",
+          "repeat": true,
+          "fields": {
+            "texto": {
+              "type": "Text",
+              "config": {
+                "label": "texto",
+                "placeholder": ""
+              }
+            },
+            "enlace": {
+              "type": "Link",
+              "config": {
+                "label": "enlace",
+                "placeholder": "",
+                "select": null,
+                "allowTargetBlank": true,
+                "allowText": false,
+                "repeat": false
+              }
+            }
+          }
+        }
+      },
+      "footer_texto": {
+        "type": "StructuredText",
+        "config": {
+          "label": "footer_texto",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "footer_contacto": {
+        "type": "Group",
+        "config": {
+          "label": "footer_contacto",
+          "repeat": false,
+          "fields": {
+            "telefono": {
+              "type": "Text",
+              "config": {
+                "label": "telefono",
+                "placeholder": ""
+              }
+            },
+            "email": {
+              "type": "Text",
+              "config": {
+                "label": "email",
+                "placeholder": ""
+              }
+            },
+            "direccion": {
+              "type": "Text",
+              "config": {
+                "label": "direccion",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "redes_sociales": {
+        "type": "Group",
+        "config": {
+          "label": "redes_sociales",
+          "repeat": true,
+          "fields": {
+            "plataforma": {
+              "type": "Select",
+              "config": {
+                "label": "plataforma",
+                "placeholder": "",
+                "options": ["Facebook", "Instagram", "Twitter", "Linkedin"]
+              }
+            },
+            "enlace": {
+              "type": "Link",
+              "config": {
+                "label": "enlace",
+                "placeholder": "",
+                "select": null,
+                "allowTargetBlank": true,
+                "allowText": false,
+                "repeat": false
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

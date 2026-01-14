@@ -1,0 +1,55 @@
+{
+  "id": "seccion_informativa",
+  "type": "SharedSlice",
+  "name": "Información de Contacto",
+  "description": "Sección informativa con contenido y opción de botón de contacto",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "titulo": {
+          "type": "Text",
+          "config": {
+            "label": "Título",
+            "placeholder": ""
+          }
+        },
+        "contenido": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Contenido",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "imagen": {
+          "type": "Image",
+          "config": {
+            "label": "Imagen",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "posicion_imagen": {
+          "type": "Select",
+          "config": {
+            "label": "Posición de la Imagen",
+            "placeholder": "",
+            "options": [
+              "Izquierda",
+              "Derecha"
+            ],
+            "default_value": "Izquierda"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
