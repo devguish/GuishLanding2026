@@ -15,6 +15,10 @@ export default function HeroSliceComponent({
   const backgroundImage = slice.primary.imagen_fondo?.url || undefined
   const topImage = slice.primary.imagen_superior?.url || undefined
   const topImageAlt = slice.primary.imagen_superior?.alt || undefined
+  // Acceder a campo nuevo que aún no está en los tipos generados
+  const primaryAny = slice.primary as any
+  const lettersImage = primaryAny.imagen_letras?.url || undefined
+  const lettersImageAlt = primaryAny.imagen_letras?.alt || "güish"
 
   return (
     <Hero
@@ -25,6 +29,8 @@ export default function HeroSliceComponent({
       backgroundImage={backgroundImage}
       topImage={topImage}
       topImageAlt={topImageAlt}
+      lettersImage={lettersImage}
+      lettersImageAlt={lettersImageAlt}
     />
   )
 }

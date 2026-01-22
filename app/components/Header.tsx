@@ -62,18 +62,6 @@ export default function Header({ className }: HeaderProps) {
       )}
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-        {/* Logo */}
-        <div className="flex items-center">
-          <Link href="/" className="flex items-center space-x-2">
-            <span className={cn(
-              "text-xl font-bold transition-colors text-[#ff7300]",
-              "[text-shadow:_2px_2px_4px_rgba(0,0,0,0.3)]"
-            )}>
-              Logo
-            </span>
-          </Link>
-        </div>
-
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center space-x-4">
           {menuItems.map((item) => (
@@ -90,12 +78,10 @@ export default function Header({ className }: HeaderProps) {
               {item.label}
             </a>
           ))}
-          <ThemeToggle />
         </nav>
 
-        {/* Mobile Menu - Theme Toggle and Menu Button */}
-        <div className="md:hidden flex items-center space-x-2">
-          <ThemeToggle />
+        {/* Mobile Menu - Menu Button */}
+        <div className="md:hidden flex items-center">
           <Button
             variant="ghost"
             size="icon"
@@ -104,6 +90,19 @@ export default function Header({ className }: HeaderProps) {
           >
             {isMenuOpen ? <X className="h-6 w-6 text-[#ff7300] [text-shadow:_2px_2px_4px_rgba(0,0,0,0.3)]" /> : <Menu className="h-6 w-6 text-[#ff7300] [text-shadow:_2px_2px_4px_rgba(0,0,0,0.3)]" />}
           </Button>
+        </div>
+
+        {/* Logo y Theme Toggle */}
+        <div className="flex items-center space-x-4">
+          <Link href="/" className="flex items-center space-x-2">
+            <span className={cn(
+              "text-xl font-bold transition-colors text-[#ff7300]",
+              "[text-shadow:_2px_2px_4px_rgba(0,0,0,0.3)]"
+            )}>
+              Logo
+            </span>
+          </Link>
+          <ThemeToggle />
         </div>
       </div>
 

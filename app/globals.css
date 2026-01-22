@@ -17,7 +17,7 @@ html {
   --secondary: 210 40% 96.1%;
   --secondary-foreground: 222.2 47.4% 11.2%;
   --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
+  --muted-foreground: 34 23% 47%; /* #927A5B - café con leche oscuro */
   --accent: 221.2 83.2% 53.3%;
   --accent-foreground: 210 40% 98%;
   --destructive: 0 84.2% 60.2%;
@@ -48,24 +48,24 @@ html {
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
-  --font-sans: var(--font-montserrat);
-  --font-mono: var(--font-montserrat);
+  --font-sans: var(--font-apercu);
+  --font-mono: var(--font-apercu);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: 222.2 84% 4.9%;
+    --background: 33 24% 44%;
     --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
+    --card: 33 24% 44%;
     --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
+    --popover: 33 24% 44%;
     --popover-foreground: 210 40% 98%;
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
     --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted-foreground: 0 0% 100%; /* Blanco en modo oscuro */
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
     --destructive: 0 62.8% 30.6%;
@@ -81,12 +81,24 @@ body {
   background-attachment: fixed;
   min-height: 100vh;
   color: hsl(var(--foreground));
-  font-family: var(--font-montserrat), system-ui, sans-serif;
+  font-family: var(--font-apercu), system-ui, sans-serif;
 }
 
-/* Ajuste para modo oscuro - color sólido */
+/* Ajuste para modo oscuro - color café con leche oscuro */
+.dark {
+  --background: 33 24% 44%;
+  --card: 33 24% 44%;
+  --popover: 33 24% 44%;
+  --muted-foreground: 0 0% 100%; /* Blanco en modo oscuro */
+}
+
 .dark body {
-  background: #535353;
+  background: #8B7355;
+}
+
+/* Forzar color café con leche oscuro para textos muted en modo claro */
+:root:not(.dark) {
+  --muted-foreground: 34 23% 47%; /* #927A5B */
 }
 
 * {

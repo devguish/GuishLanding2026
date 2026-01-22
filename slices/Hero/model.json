@@ -44,6 +44,14 @@
             "thumbnails": []
           }
         },
+        "imagen_letras": {
+          "type": "Image",
+          "config": {
+            "label": "Imagen de Letras (mitad inferior)",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
         "texto_boton": {
           "type": "Text",
           "config": {

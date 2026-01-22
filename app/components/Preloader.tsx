@@ -46,7 +46,7 @@ export default function Preloader({ children }: PreloaderProps) {
         className={cn(
           "fixed inset-0 z-[100] flex items-center justify-center",
           "bg-[#FFF7F2]",
-          "dark:bg-[#535353]",
+          "dark:bg-[#8B7355]",
           "transition-all duration-500 ease-out",
           isExiting && "opacity-0 pointer-events-none"
         )}

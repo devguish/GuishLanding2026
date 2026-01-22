@@ -71,8 +71,38 @@ export default function HeaderWithPrismic({ className, config }: HeaderWithPrism
       )}
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-        {/* Logo */}
-        <div className="flex items-center">
+        {/* Desktop Menu */}
+        <nav className="hidden md:flex items-center space-x-4">
+          {menuItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              onClick={(e) => handleSmoothScroll(e, item.href)}
+              className={cn(
+                "text-sm font-medium transition-all duration-300 ease-in-out",
+                "hover:scale-105 text-[#ff7300]",
+                "[text-shadow:_2px_2px_4px_rgba(0,0,0,0.3)]"
+              )}
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+
+        {/* Mobile Menu - Menu Button */}
+        <div className="md:hidden flex items-center">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X className="h-6 w-6 text-[#ff7300] [text-shadow:_2px_2px_4px_rgba(0,0,0,0.3)]" /> : <Menu className="h-6 w-6 text-[#ff7300] [text-shadow:_2px_2px_4px_rgba(0,0,0,0.3)]" />}
+          </Button>
+        </div>
+
+        {/* Logo y Theme Toggle */}
+        <div className="flex items-center space-x-4">
           <Link href="/" className="flex items-center space-x-2">
             {logoUrl ? (
               <Image
@@ -94,38 +124,7 @@ export default function HeaderWithPrismic({ className, config }: HeaderWithPrism
               </span>
             )}
           </Link>
-        </div>
-
-        {/* Desktop Menu */}
-        <nav className="hidden md:flex items-center space-x-4">
-          {menuItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              onClick={(e) => handleSmoothScroll(e, item.href)}
-              className={cn(
-                "text-sm font-medium transition-all duration-300 ease-in-out",
-                "hover:scale-105 text-[#ff7300]",
-                "[text-shadow:_2px_2px_4px_rgba(0,0,0,0.3)]"
-              )}
-            >
-              {item.label}
-            </a>
-          ))}
           <ThemeToggle />
-        </nav>
-
-        {/* Mobile Menu - Theme Toggle and Menu Button */}
-        <div className="md:hidden flex items-center space-x-2">
-          <ThemeToggle />
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X className="h-6 w-6 text-[#ff7300] [text-shadow:_2px_2px_4px_rgba(0,0,0,0.3)]" /> : <Menu className="h-6 w-6 text-[#ff7300] [text-shadow:_2px_2px_4px_rgba(0,0,0,0.3)]" />}
-          </Button>
         </div>
       </div>
 
