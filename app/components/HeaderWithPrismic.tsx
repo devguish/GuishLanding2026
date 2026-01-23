@@ -67,7 +67,7 @@ export default function HeaderWithPrismic({ className, config }: HeaderWithPrism
         className
       )}
       style={{
-        background: 'linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1))',
+        background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1))',
         backdropFilter: 'blur(8px) saturate(180%)',
         WebkitBackdropFilter: 'blur(8px) saturate(180%)'
       }}
@@ -138,8 +138,8 @@ export default function HeaderWithPrismic({ className, config }: HeaderWithPrism
           )}
           style={{ 
             top: '64px',
-            backgroundColor: 'rgba(255, 255, 255, 0.25)',
-            background: 'linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.2))',
+            backgroundColor: 'rgba(0, 0, 0, 0.25)',
+            background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2))',
             backdropFilter: 'blur(15px) saturate(180%)',
             WebkitBackdropFilter: 'blur(15px) saturate(180%)',
             willChange: 'backdrop-filter',

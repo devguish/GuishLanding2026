@@ -59,20 +59,20 @@ export default function FooterWithPrismic({ className, config }: FooterWithPrism
 
           {/* Columna 2: Enlaces rápidos */}
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold text-[#ff7300]">Enlaces Rápidos</h4>
+            <h4 className="text-sm font-semibold text-white">Enlaces Rápidos</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#inicio" className="text-[#ff7300] hover:opacity-80 transition-opacity underline">
+                <a href="#inicio" className="text-white hover:opacity-80 transition-opacity underline">
                   Inicio
                 </a>
               </li>
               <li>
-                <a href="#partners-titulo" className="text-[#ff7300] hover:opacity-80 transition-opacity underline">
+                <a href="#partners-titulo" className="text-white hover:opacity-80 transition-opacity underline">
                   Partners
                 </a>
               </li>
               <li>
-                <a href="#presencia-y-alcance" className="text-[#ff7300] hover:opacity-80 transition-opacity underline">
+                <a href="#presencia-y-alcance" className="text-white hover:opacity-80 transition-opacity underline">
                   Presencia y alcance
                 </a>
               </li>
@@ -81,8 +81,8 @@ export default function FooterWithPrismic({ className, config }: FooterWithPrism
 
           {/* Columna 3: Contacto */}
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold text-[#ff7300]">Contacto</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <h4 className="text-sm font-semibold text-white">Contacto</h4>
+            <ul className="space-y-2 text-sm text-white">
               <li>{email}</li>
               <li>{telefono}</li>
               {direccion && <li>{direccion}</li>}
@@ -96,7 +96,7 @@ export default function FooterWithPrismic({ className, config }: FooterWithPrism
                     href={red.enlace}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#ff7300] hover:opacity-80 transition-opacity"
+                    className="text-white hover:opacity-80 transition-opacity"
                   >
                     {red.plataforma}
                   </a>
@@ -108,7 +108,7 @@ export default function FooterWithPrismic({ className, config }: FooterWithPrism
         </div>
 
         {/* Copyright */}
-        <div className="mt-8 pt-8 text-center text-sm text-muted-foreground">
+        <div className="mt-8 pt-8 text-center text-sm text-white">
           <p>© {currentYear} Todos los derechos reservados.</p>
         </div>
       </div>

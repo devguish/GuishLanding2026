@@ -51,20 +51,20 @@ export default function Footer({ className }: FooterProps) {
 
           {/* Columna 2: Enlaces rápidos */}
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold text-[#ff7300]">Enlaces Rápidos</h4>
+            <h4 className="text-sm font-semibold text-white">Enlaces Rápidos</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#inicio" className="text-[#ff7300] hover:opacity-80 transition-opacity underline">
+                <a href="#inicio" className="text-white hover:opacity-80 transition-opacity underline">
                   Inicio
                 </a>
               </li>
               <li>
-                <a href="#productos" className="text-[#ff7300] hover:opacity-80 transition-opacity underline">
+                <a href="#productos" className="text-white hover:opacity-80 transition-opacity underline">
                   Productos
                 </a>
               </li>
               <li>
-                <a href="#presencia-y-alcance" className="text-[#ff7300] hover:opacity-80 transition-opacity underline">
+                <a href="#presencia-y-alcance" className="text-white hover:opacity-80 transition-opacity underline">
                   Presencia y alcance
                 </a>
               </li>
@@ -73,8 +73,8 @@ export default function Footer({ className }: FooterProps) {
 
           {/* Columna 3: Contacto */}
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold text-[#ff7300]">Contacto</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <h4 className="text-sm font-semibold text-white">Contacto</h4>
+            <ul className="space-y-2 text-sm text-white">
               <li>email@ejemplo.com</li>
               <li>+1 (555) 123-4567</li>
             </ul>
@@ -83,7 +83,7 @@ export default function Footer({ className }: FooterProps) {
         </div>
 
         {/* Copyright */}
-        <div className="mt-8 pt-8 text-center text-sm text-muted-foreground">
+        <div className="mt-8 pt-8 text-center text-sm text-white">
           <p>© {currentYear} Todos los derechos reservados.</p>
         </div>
       </div>
