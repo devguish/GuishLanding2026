@@ -52,10 +52,13 @@ export default function Hero({
         maxHeight: '75vh', 
         width: '100%',
         minWidth: '100%',
+        maxWidth: '100%',
         marginLeft: 0,
         marginRight: 0,
         paddingLeft: 0,
-        paddingRight: 0
+        paddingRight: 0,
+        left: 0,
+        right: 0
       }}
     >
       {/* Background Image */}
@@ -90,18 +93,22 @@ export default function Hero({
       {/* Imagen de letras - mismo tamaño que la portada, responsive y de punta a punta */}
       {lettersImage && (
         <div 
-          className="absolute inset-0 w-full h-full z-[1] left-0 right-0 bottom-0"
+          className="absolute z-[1]"
           style={{
             marginLeft: 0,
             marginRight: 0,
             marginBottom: 0,
+            marginTop: 0,
             paddingLeft: 0,
             paddingRight: 0,
             paddingBottom: 0,
-            width: '100%',
+            paddingTop: 0,
+            width: '100vw',
+            height: '100%',
             left: 0,
             right: 0,
-            bottom: 0
+            bottom: 0,
+            top: 0
           }}
         >
           <Image
@@ -116,16 +123,19 @@ export default function Hero({
               objectPosition: 'left bottom',
               width: '100%', 
               height: '100%',
+              minWidth: '100%',
               maxWidth: '100%',
-              maxHeight: '100%',
               left: 0,
               right: 0,
               bottom: 0,
+              top: 0,
               marginLeft: 0,
               marginRight: 0,
+              marginTop: 0,
               marginBottom: 0,
               paddingLeft: 0,
               paddingRight: 0,
+              paddingTop: 0,
               paddingBottom: 0
             }}
           />
