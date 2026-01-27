@@ -1,5 +1,8 @@
+"use client"
+
 import * as React from "react"
 import Image from "next/image"
+import { useTheme } from "next-themes"
 import { cn } from "@/app/lib/utils"
 import { ConfiguracionGlobalData } from "@/app/lib/getConfiguracionGlobal"
 
@@ -9,26 +12,37 @@ interface FooterWithPrismicProps {
 }
 
 export default function FooterWithPrismic({ className, config }: FooterWithPrismicProps) {
+  const { theme } = useTheme()
+  const [mounted, setMounted] = React.useState(false)
   const currentYear = new Date().getFullYear()
+
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const footerTexto = config?.footerTexto || "Distribución oficial, licenciamiento y posicionamiento estratégico en canales de alto alcance."
   const contacto = config?.footerContacto
-  const email = contacto?.email || "email@ejemplo.com"
-  const telefono = contacto?.telefono || "+1 (555) 123-4567"
+  const email = contacto?.email || "Paola.cid@guish.com.mx"
   const direccion = contacto?.direccion
+
+  // Color de fondo según el tema
+  const backgroundColor = mounted && theme === "dark" ? "#CBA98D" : "#FFF7F2"
+  // Color de texto según el tema
+  const textColor = mounted && theme === "dark" ? "#FFFFFF" : "#927A5B"
 
   return (
     <footer
       className={cn(
-        "bg-white/80 dark:bg-[#9B7A5F]/80 backdrop-blur-md border-0",
+        "border-0 shadow-[0_-4px_20px_rgba(0,0,0,0.2)] dark:shadow-[0_-4px_20px_rgba(0,0,0,0.2)]",
         className
       )}
+      style={{ backgroundColor }}
     >
-      <div className="container mx-auto px-4 py-8 md:px-6">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
+      <div className="container mx-auto px-4 py-2 md:px-6">
+        <div className="grid grid-cols-1 gap-2 lg:grid-cols-4 lg:items-center">
           {/* Columna 4: Imágenes - en móvil aparece al final, centrada */}
-          <div className="flex flex-row gap-4 items-center justify-center lg:items-stretch lg:justify-end lg:col-start-4 lg:row-start-1 order-last lg:order-none">
-            <a href="#inicio" className="relative w-24 h-24 lg:w-auto lg:h-full aspect-square lg:min-h-[120px] block cursor-pointer">
+          <div className="flex flex-row gap-4 items-center justify-center lg:items-center lg:justify-end lg:col-start-4 lg:row-start-1 order-last lg:order-none">
+            <a href="#inicio" className="relative w-32 h-32 lg:w-auto lg:h-full aspect-square lg:min-h-[180px] block cursor-pointer">
               <Image
                 src="/sonriso.png"
                 alt="Sonriso"
@@ -36,7 +50,7 @@ export default function FooterWithPrismic({ className, config }: FooterWithPrism
                 className="object-contain"
               />
             </a>
-            <a href="#inicio" className="relative w-24 h-24 lg:w-auto lg:h-full aspect-square lg:min-h-[120px] block cursor-pointer">
+            <a href="#inicio" className="relative w-32 h-32 lg:w-auto lg:h-full aspect-square lg:min-h-[180px] block cursor-pointer">
               <Image
                 src="/saludo.png"
                 alt="Saludo"
@@ -46,7 +60,7 @@ export default function FooterWithPrismic({ className, config }: FooterWithPrism
             </a>
           </div>
           {/* Columna 1: Logo */}
-          <div className="space-y-4">
+          <div className="space-y-1">
             <div className="relative w-20 h-20">
               <Image
                 src="/logo.png"
@@ -58,21 +72,21 @@ export default function FooterWithPrismic({ className, config }: FooterWithPrism
           </div>
 
           {/* Columna 2: Enlaces rápidos */}
-          <div className="space-y-4">
-            <h4 className="text-sm font-semibold text-white">Enlaces Rápidos</h4>
-            <ul className="space-y-2 text-sm">
+          <div className="space-y-1">
+            <h4 className="text-sm font-semibold" style={{ color: textColor }}>Enlaces Rápidos</h4>
+            <ul className="space-y-1 text-sm">
               <li>
-                <a href="#inicio" className="text-white hover:opacity-80 transition-opacity underline">
+                <a href="#inicio" className="hover:opacity-80 transition-opacity underline" style={{ color: textColor }}>
                   Inicio
                 </a>
               </li>
               <li>
-                <a href="#partners-titulo" className="text-white hover:opacity-80 transition-opacity underline">
+                <a href="#partners-titulo" className="hover:opacity-80 transition-opacity underline" style={{ color: textColor }}>
                   Partners
                 </a>
               </li>
               <li>
-                <a href="#presencia-y-alcance" className="text-white hover:opacity-80 transition-opacity underline">
+                <a href="#presencia-y-alcance" className="hover:opacity-80 transition-opacity underline" style={{ color: textColor }}>
                   Presencia y alcance
                 </a>
               </li>
@@ -80,11 +94,20 @@ export default function FooterWithPrismic({ className, config }: FooterWithPrism
           </div>
 
           {/* Columna 3: Contacto */}
-          <div className="space-y-4">
-            <h4 className="text-sm font-semibold text-white">Contacto</h4>
-            <ul className="space-y-2 text-sm text-white">
-              <li>{email}</li>
-              <li>{telefono}</li>
+          <div className="space-y-1">
+            <h4 className="text-sm font-semibold" style={{ color: textColor }}>Contacto</h4>
+            <ul className="space-y-1 text-sm" style={{ color: textColor }}>
+              <li>
+                <a 
+                  href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 transition-opacity"
+                  style={{ color: textColor }}
+                >
+                  {email}
+                </a>
+              </li>
               {direccion && <li>{direccion}</li>}
             </ul>
             {/* Redes Sociales */}
@@ -96,7 +119,8 @@ export default function FooterWithPrismic({ className, config }: FooterWithPrism
                     href={red.enlace}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white hover:opacity-80 transition-opacity"
+                    className="hover:opacity-80 transition-opacity"
+                    style={{ color: textColor }}
                   >
                     {red.plataforma}
                   </a>
@@ -108,7 +132,7 @@ export default function FooterWithPrismic({ className, config }: FooterWithPrism
         </div>
 
         {/* Copyright */}
-        <div className="mt-8 pt-8 text-center text-sm text-white">
+        <div className="mt-2 pt-2 text-center text-sm" style={{ color: textColor }}>
           <p>© {currentYear} Todos los derechos reservados.</p>
         </div>
       </div>

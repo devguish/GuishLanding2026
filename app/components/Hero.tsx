@@ -44,12 +44,12 @@ export default function Hero({
     <section
       id="inicio"
       className={cn(
-        "relative flex min-h-screen w-full max-w-full items-center justify-center overflow-hidden -mt-16",
+        "relative flex w-full max-w-full items-center justify-center overflow-hidden -mt-16",
         className
       )}
       style={{ 
-        height: '100vh', 
-        maxHeight: '100vh', 
+        height: '75vh', 
+        maxHeight: '75vh', 
         width: '100%',
         minWidth: '100%',
         marginLeft: 0,
