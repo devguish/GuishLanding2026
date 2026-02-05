@@ -66,6 +66,17 @@
 									"value": "master",
 									"type": "Text"
 								}
+							],
+							[
+								"enlace",
+								{
+									"__TYPE__": "LinkContent",
+									"key": "gcar-link",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://example.com"
+									}
+								}
 							]
 						]
 					}

@@ -28,9 +28,6 @@
             "linkedin_post": {
               "type": "SharedSlice"
             },
-            "configuracion_fondo": {
-              "type": "SharedSlice"
-            },
             "video_section": {
               "type": "SharedSlice"
             },

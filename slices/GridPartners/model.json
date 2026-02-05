@@ -1,7 +1,7 @@
 {
   "id": "grid_partners",
   "type": "SharedSlice",
-  "name": "Nuestros Partners",
+  "name": "Carrousel de imagenes",
   "description": "Grid con logos y descripciones de partners o colaboradores",
   "variations": [
     {

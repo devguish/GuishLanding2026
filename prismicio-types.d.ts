@@ -263,7 +263,6 @@ export type ConfiguracionGlobalDocument<Lang extends string = string> =
 
 type LandingDocumentDataSlicesSlice =
   | LinkedinPostSlice
-  | ConfiguracionFondoSlice
   | VideoSectionSlice
   | SeccionInformativaSlice
   | GridCaracteristicasSlice

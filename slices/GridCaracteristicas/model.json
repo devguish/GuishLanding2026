@@ -1,7 +1,7 @@
 {
   "id": "grid_caracteristicas",
   "type": "SharedSlice",
-  "name": "Bloque Tiendas",
+  "name": "Grilla imagenes",
   "description": "Grid con características, beneficios o información sobre la empresa",
   "variations": [
     {

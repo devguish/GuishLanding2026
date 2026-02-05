@@ -1,18 +1,1 @@
-[
-	{
-		"__TYPE__": "SharedSliceContent",
-		"variation": "default",
-		"primary": {
-			"url_video": {
-				"__TYPE__": "LinkContent",
-				"key": "5da23fec-3f56-44b6-8c27-0e979bf7be83",
-				"value": {
-					"__TYPE__": "ExternalLink",
-					"url": "http://twitter.com",
-					"text": "possible"
-				}
-			}
-		},
-		"items": []
-	}
-]
+[{"__TYPE__":"SharedSliceContent","variation":"default","primary":{"url_video":{"__TYPE__":"LinkContent","key":"video-embed","value":{"__TYPE__":"ExternalLink","url":"https://www.youtube.com/watch?v=dQw4w9WgXcQ"}}},"items":[]}]
