@@ -467,11 +467,11 @@ export type ConfiguracionFondoSlice = prismic.SharedSlice<
 >;
 
 /**
- * Item in *Bloque Tiendas → Default → Primary → Caracteristicas*
+ * Item in *Grilla imagenes → Default → Primary → Caracteristicas*
  */
 export interface GridCaracteristicasSliceDefaultPrimaryCaracteristicasItem {
   /**
-   * Título de la Característica field in *Bloque Tiendas → Default → Primary → Caracteristicas*
+   * Título de la Característica field in *Grilla imagenes → Default → Primary → Caracteristicas*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -481,7 +481,7 @@ export interface GridCaracteristicasSliceDefaultPrimaryCaracteristicasItem {
   titulo: prismic.KeyTextField;
 
   /**
-   * Descripción de la Característica field in *Bloque Tiendas → Default → Primary → Caracteristicas*
+   * Descripción de la Característica field in *Grilla imagenes → Default → Primary → Caracteristicas*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -491,7 +491,7 @@ export interface GridCaracteristicasSliceDefaultPrimaryCaracteristicasItem {
   descripcion: prismic.RichTextField;
 
   /**
-   * Icono field in *Bloque Tiendas → Default → Primary → Caracteristicas*
+   * Icono field in *Grilla imagenes → Default → Primary → Caracteristicas*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -501,7 +501,7 @@ export interface GridCaracteristicasSliceDefaultPrimaryCaracteristicasItem {
   icono: prismic.ImageField<never>;
 
   /**
-   * Enlace field in *Bloque Tiendas → Default → Primary → Caracteristicas*
+   * Enlace field in *Grilla imagenes → Default → Primary → Caracteristicas*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
@@ -512,11 +512,11 @@ export interface GridCaracteristicasSliceDefaultPrimaryCaracteristicasItem {
 }
 
 /**
- * Primary content in *Bloque Tiendas → Default → Primary*
+ * Primary content in *Grilla imagenes → Default → Primary*
  */
 export interface GridCaracteristicasSliceDefaultPrimary {
   /**
-   * Título de la Sección field in *Bloque Tiendas → Default → Primary*
+   * Título de la Sección field in *Grilla imagenes → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -526,7 +526,7 @@ export interface GridCaracteristicasSliceDefaultPrimary {
   titulo_seccion: prismic.KeyTextField;
 
   /**
-   * Subtitulo field in *Bloque Tiendas → Default → Primary*
+   * Subtitulo field in *Grilla imagenes → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -536,7 +536,7 @@ export interface GridCaracteristicasSliceDefaultPrimary {
   subtitulo: prismic.KeyTextField;
 
   /**
-   * Caracteristicas field in *Bloque Tiendas → Default → Primary*
+   * Caracteristicas field in *Grilla imagenes → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
@@ -549,7 +549,7 @@ export interface GridCaracteristicasSliceDefaultPrimary {
 }
 
 /**
- * Default variation for Bloque Tiendas Slice
+ * Default variation for Grilla imagenes Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
@@ -562,12 +562,12 @@ export type GridCaracteristicasSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Slice variation for *Bloque Tiendas*
+ * Slice variation for *Grilla imagenes*
  */
 type GridCaracteristicasSliceVariation = GridCaracteristicasSliceDefault;
 
 /**
- * Bloque Tiendas Shared Slice
+ * Grilla imagenes Shared Slice
  *
  * - **API ID**: `grid_caracteristicas`
  * - **Description**: Grid con características, beneficios o información sobre la empresa
@@ -579,11 +579,11 @@ export type GridCaracteristicasSlice = prismic.SharedSlice<
 >;
 
 /**
- * Item in *Nuestros Partners → Default → Primary → Partners*
+ * Item in *Carrousel de imagenes → Default → Primary → Partners*
  */
 export interface GridPartnersSliceDefaultPrimaryItemsItem {
   /**
-   * Nombre del Partner field in *Nuestros Partners → Default → Primary → Partners*
+   * Nombre del Partner field in *Carrousel de imagenes → Default → Primary → Partners*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -593,7 +593,7 @@ export interface GridPartnersSliceDefaultPrimaryItemsItem {
   nombre: prismic.KeyTextField;
 
   /**
-   * Descripción field in *Nuestros Partners → Default → Primary → Partners*
+   * Descripción field in *Carrousel de imagenes → Default → Primary → Partners*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -603,7 +603,7 @@ export interface GridPartnersSliceDefaultPrimaryItemsItem {
   descripcion: prismic.RichTextField;
 
   /**
-   * Logo del Partner field in *Nuestros Partners → Default → Primary → Partners*
+   * Logo del Partner field in *Carrousel de imagenes → Default → Primary → Partners*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -613,7 +613,7 @@ export interface GridPartnersSliceDefaultPrimaryItemsItem {
   imagen: prismic.ImageField<never>;
 
   /**
-   * Enlace del Partner field in *Nuestros Partners → Default → Primary → Partners*
+   * Enlace del Partner field in *Carrousel de imagenes → Default → Primary → Partners*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
@@ -624,11 +624,11 @@ export interface GridPartnersSliceDefaultPrimaryItemsItem {
 }
 
 /**
- * Primary content in *Nuestros Partners → Default → Primary*
+ * Primary content in *Carrousel de imagenes → Default → Primary*
  */
 export interface GridPartnersSliceDefaultPrimary {
   /**
-   * Título de la Sección field in *Nuestros Partners → Default → Primary*
+   * Título de la Sección field in *Carrousel de imagenes → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -638,7 +638,7 @@ export interface GridPartnersSliceDefaultPrimary {
   titulo_seccion: prismic.KeyTextField;
 
   /**
-   * Subtítulo field in *Nuestros Partners → Default → Primary*
+   * Subtítulo field in *Carrousel de imagenes → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -648,7 +648,7 @@ export interface GridPartnersSliceDefaultPrimary {
   subtitulo: prismic.KeyTextField;
 
   /**
-   * Partners field in *Nuestros Partners → Default → Primary*
+   * Partners field in *Carrousel de imagenes → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
@@ -659,7 +659,7 @@ export interface GridPartnersSliceDefaultPrimary {
 }
 
 /**
- * Default variation for Nuestros Partners Slice
+ * Default variation for Carrousel de imagenes Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
@@ -672,12 +672,12 @@ export type GridPartnersSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Slice variation for *Nuestros Partners*
+ * Slice variation for *Carrousel de imagenes*
  */
 type GridPartnersSliceVariation = GridPartnersSliceDefault;
 
 /**
- * Nuestros Partners Shared Slice
+ * Carrousel de imagenes Shared Slice
  *
  * - **API ID**: `grid_partners`
  * - **Description**: Grid con logos y descripciones de partners o colaboradores
@@ -851,16 +851,6 @@ export interface ProductoDestacadoSliceDefaultPrimary {
   imagen: prismic.ImageField<never>;
 
   /**
-   * Texto del Botón field in *Bloque Secundario → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: Ver más detalles
-   * - **API ID Path**: producto_destacado.default.primary.texto_boton
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  texto_boton: prismic.KeyTextField;
-
-  /**
    * Sección del Botón field in *Bloque Secundario → Default → Primary*
    *
    * - **Field Type**: Select
@@ -878,25 +868,91 @@ export interface ProductoDestacadoSliceDefaultPrimary {
   >;
 
   /**
-   * Texto del Botón 2 field in *Bloque Secundario → Default → Primary*
+   * Posición de la Imagen field in *Bloque Secundario → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Izquierda
+   * - **API ID Path**: producto_destacado.default.primary.posicion_imagen
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  posicion_imagen: prismic.SelectField<"Izquierda" | "Derecha", "filled">;
+}
+
+/**
+ * Default variation for Bloque Secundario Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ProductoDestacadoSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ProductoDestacadoSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Bloque Secundario*
+ */
+type ProductoDestacadoSliceVariation = ProductoDestacadoSliceDefault;
+
+/**
+ * Bloque Secundario Shared Slice
+ *
+ * - **API ID**: `producto_destacado`
+ * - **Description**: Producto o servicio principal
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ProductoDestacadoSlice = prismic.SharedSlice<
+  "producto_destacado",
+  ProductoDestacadoSliceVariation
+>;
+
+/**
+ * Primary content in *Bloque Secundario → Default → Primary*
+ */
+export interface ProductoDestacadoSliceDefaultPrimary {
+  /**
+   * Título field in *Bloque Secundario → Default → Primary*
    *
    * - **Field Type**: Text
-   * - **Placeholder**: Presencia y alcance
-   * - **API ID Path**: producto_destacado.default.primary.texto_boton_2
+   * - **Placeholder**: *None*
+   * - **API ID Path**: producto_destacado.default.primary.titulo
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
-  texto_boton_2: prismic.KeyTextField;
+  titulo: prismic.KeyTextField;
 
   /**
-   * Sección del Botón 2 field in *Bloque Secundario → Default → Primary*
+   * Descripción field in *Bloque Secundario → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: producto_destacado.default.primary.descripcion
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  descripcion: prismic.RichTextField;
+
+  /**
+   * Imagen del Producto field in *Bloque Secundario → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: producto_destacado.default.primary.imagen
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  imagen: prismic.ImageField<never>;
+
+  /**
+   * Sección del Botón field in *Bloque Secundario → Default → Primary*
    *
    * - **Field Type**: Select
    * - **Placeholder**: Selecciona una sección
    * - **Default Value**:
-   * - **API ID Path**: producto_destacado.default.primary.enlace_boton_2
+   * - **API ID Path**: producto_destacado.default.primary.enlace_boton
    * - **Documentation**: https://prismic.io/docs/fields/select
    */
-  enlace_boton_2: prismic.SelectField<
+  enlace_boton: prismic.SelectField<
     | "#inicio"
     | "#presencia-y-alcance"
     | "#partners-titulo"
@@ -969,53 +1025,6 @@ export interface SeccionContenidoSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
   contenido: prismic.RichTextField;
-
-  /**
-   * Imagen field in *Bloque Principal → Default → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: seccion_contenido.default.primary.imagen
-   * - **Documentation**: https://prismic.io/docs/fields/image
-   */
-  imagen: prismic.ImageField<never>;
-
-  /**
-   * Posición de la Imagen field in *Bloque Principal → Default → Primary*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **Default Value**: izquierda
-   * - **API ID Path**: seccion_contenido.default.primary.posicion_imagen
-   * - **Documentation**: https://prismic.io/docs/fields/select
-   */
-  posicion_imagen: prismic.SelectField<"izquierda" | "derecha", "filled">;
-
-  /**
-   * Texto del Botón field in *Bloque Principal → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: seccion_contenido.default.primary.texto_boton
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  texto_boton: prismic.KeyTextField;
-
-  /**
-   * Enlace del Botón field in *Bloque Principal → Default → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: seccion_contenido.default.primary.enlace_boton
-   * - **Documentation**: https://prismic.io/docs/fields/link
-   */
-  enlace_boton: prismic.LinkField<
-    string,
-    string,
-    unknown,
-    prismic.FieldState,
-    never
-  >;
 }
 
 /**
@@ -1071,53 +1080,6 @@ export interface SeccionContenidoSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
   contenido: prismic.RichTextField;
-
-  /**
-   * Imagen field in *Bloque Principal → Default → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: seccion_contenido.default.primary.imagen
-   * - **Documentation**: https://prismic.io/docs/fields/image
-   */
-  imagen: prismic.ImageField<never>;
-
-  /**
-   * Posición de la Imagen field in *Bloque Principal → Default → Primary*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **Default Value**: izquierda
-   * - **API ID Path**: seccion_contenido.default.primary.posicion_imagen
-   * - **Documentation**: https://prismic.io/docs/fields/select
-   */
-  posicion_imagen: prismic.SelectField<"izquierda" | "derecha", "filled">;
-
-  /**
-   * Texto del Botón field in *Bloque Principal → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: seccion_contenido.default.primary.texto_boton
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  texto_boton: prismic.KeyTextField;
-
-  /**
-   * Enlace del Botón field in *Bloque Principal → Default → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: seccion_contenido.default.primary.enlace_boton
-   * - **Documentation**: https://prismic.io/docs/fields/link
-   */
-  enlace_boton: prismic.LinkField<
-    string,
-    string,
-    unknown,
-    prismic.FieldState,
-    never
-  >;
 }
 
 /**
@@ -1332,6 +1294,10 @@ declare module "@prismicio/client" {
       LinkedinPostSliceDefaultPrimary,
       LinkedinPostSliceVariation,
       LinkedinPostSliceDefault,
+      ProductoDestacadoSlice,
+      ProductoDestacadoSliceDefaultPrimary,
+      ProductoDestacadoSliceVariation,
+      ProductoDestacadoSliceDefault,
       ProductoDestacadoSlice,
       ProductoDestacadoSliceDefaultPrimary,
       ProductoDestacadoSliceVariation,

@@ -1,6 +1,5 @@
 import * as React from "react"
 import Image from "next/image"
-import { Button } from "./ui/button"
 import { cn } from "@/app/lib/utils"
 
 interface ProductoDestacadoProps {
@@ -8,10 +7,6 @@ interface ProductoDestacadoProps {
   descripcion?: string
   imagen?: string
   imagenAlt?: string
-  ctaText?: string
-  ctaHref?: string
-  ctaText2?: string
-  ctaHref2?: string
   alineacion?: "izquierda" | "derecha"
   className?: string
 }
@@ -21,10 +16,6 @@ export default function ProductoDestacado({
   descripcion = "Descubre nuestro producto estrella diseñado para transformar tu experiencia. Con características innovadoras y un diseño excepcional.",
   imagen,
   imagenAlt = "Producto destacado",
-  ctaText = "Ver más detalles",
-  ctaHref = "#producto",
-  ctaText2,
-  ctaHref2,
   alineacion = "izquierda",
   className,
 }: ProductoDestacadoProps) {
@@ -73,18 +64,6 @@ export default function ProductoDestacado({
               <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
                 {descripcion}
               </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 sm:pt-6 justify-center items-center w-full">
-              {ctaText && (
-                <Button size="lg" className="text-base sm:text-lg px-6 sm:px-8 w-full sm:w-auto shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" asChild>
-                  <a href={ctaHref || "#"}>{ctaText}</a>
-                </Button>
-              )}
-              {ctaText2 && (
-                <Button variant="outline" size="lg" className="text-base sm:text-lg px-6 sm:px-8 border-2 hover:border-primary w-full sm:w-auto transition-all duration-300 hover:scale-105" asChild>
-                  <a href={ctaHref2 || "#"}>{ctaText2}</a>
-                </Button>
-              )}
             </div>
           </div>
         </div>

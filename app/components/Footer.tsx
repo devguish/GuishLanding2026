@@ -32,10 +32,10 @@ export default function Footer({ className }: FooterProps) {
       style={{ backgroundColor }}
     >
       <div className="container mx-auto px-4 py-2 md:px-6">
-        <div className="grid grid-cols-1 gap-2 lg:grid-cols-4 lg:items-center">
-          {/* Columna 4: Imágenes - en móvil aparece al final, centrada */}
-          <div className="flex flex-row gap-4 items-center justify-center lg:items-center lg:justify-end lg:col-start-4 lg:row-start-1 order-last lg:order-none">
-            <a href="#inicio" className="relative w-32 h-32 lg:w-auto lg:h-full aspect-square lg:min-h-[180px] block cursor-pointer">
+        <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-4 lg:items-center lg:gap-8">
+          {/* Columna 4: Imágenes - en móvil/tablet aparece en fila separada debajo, en desktop a la derecha */}
+          <div className="flex flex-row gap-3 sm:gap-4 items-center justify-center lg:items-center lg:justify-end lg:col-start-4 lg:row-start-1 order-last lg:order-none min-w-0">
+            <a href="#inicio" className="relative w-20 h-20 sm:w-24 sm:h-24 lg:w-24 lg:h-24 xl:w-32 xl:h-32 shrink-0 block cursor-pointer">
               <Image
                 src="/sonriso.png"
                 alt="Sonriso"
@@ -43,7 +43,7 @@ export default function Footer({ className }: FooterProps) {
                 className="object-contain"
               />
             </a>
-            <a href="#inicio" className="relative w-32 h-32 lg:w-auto lg:h-full aspect-square lg:min-h-[180px] block cursor-pointer">
+            <a href="#inicio" className="relative w-20 h-20 sm:w-24 sm:h-24 lg:w-24 lg:h-24 xl:w-32 xl:h-32 shrink-0 block cursor-pointer">
               <Image
                 src="/saludo.png"
                 alt="Saludo"
@@ -53,7 +53,7 @@ export default function Footer({ className }: FooterProps) {
             </a>
           </div>
           {/* Columna 1: Logo */}
-          <div className="space-y-1">
+          <div className="space-y-1 min-w-0">
             <div className="relative w-20 h-20">
               <Image
                 src="/logo.png"
@@ -65,7 +65,7 @@ export default function Footer({ className }: FooterProps) {
           </div>
 
           {/* Columna 2: Enlaces rápidos */}
-          <div className="space-y-1">
+          <div className="space-y-1 min-w-0">
             <h4 className="text-sm font-semibold" style={{ color: textColor }}>Enlaces Rápidos</h4>
             <ul className="space-y-1 text-sm">
               <li>
@@ -87,7 +87,7 @@ export default function Footer({ className }: FooterProps) {
           </div>
 
           {/* Columna 3: Contacto */}
-          <div className="space-y-1">
+          <div className="space-y-1 min-w-0">
             <h4 className="text-sm font-semibold" style={{ color: textColor }}>Contacto</h4>
             <ul className="space-y-1 text-sm" style={{ color: textColor }}>
               <li>
