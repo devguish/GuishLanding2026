@@ -42,8 +42,22 @@ const apercu = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Landing Page",
-  description: "Landing page moderna y responsive",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://guish.com.mx"),
+  title: {
+    default: "Güish",
+    template: "%s | Güish",
+  },
+  description: "Generamos potencia a tu marca en todos los marketplaces",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
+  openGraph: {
+    title: "Güish",
+    description: "Generamos potencia a tu marca en todos los marketplaces",
+    images: ["/logo.png"],
+  },
 };
 
 export default function RootLayout({
