@@ -1,7 +1,3 @@
-/**
- * Vista de mantenimiento: imagen que se ajusta a la ventana sin recortes.
- * Agregar en public una imagen llamada mantenimiento.png (o .jpg, .webp).
- */
 export default function Mantenimiento() {
   return (
     <div

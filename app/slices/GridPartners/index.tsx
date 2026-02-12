@@ -11,10 +11,8 @@ export default function GridPartnersSliceComponent({
   const titulo = (slice.primary.titulo_seccion as string) || undefined
   const subtitulo = (slice.primary.subtitulo as string) || undefined
   
-  // Los items repetibles están en slice.primary.items, no en slice.items
   const items = slice.primary.items || []
   
-  // Filtrar items vacíos y mapear solo los que tienen datos
   const partners = items
     .filter((item: prismic.Content.GridPartnersSliceDefaultPrimaryItemsItem) => {
       const nombre = (item.nombre as string)?.trim()

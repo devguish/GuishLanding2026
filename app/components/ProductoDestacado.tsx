@@ -30,7 +30,6 @@ export default function ProductoDestacado({
     >
       <div className="container mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center">
-          {/* Imagen */}
           <div className={cn(
             "order-1",
             isLeft ? "lg:order-1" : "lg:order-2"
@@ -50,8 +49,6 @@ export default function ProductoDestacado({
               </div>
             )}
           </div>
-
-          {/* Contenido */}
           <div className={cn(
             "order-2 space-y-4 sm:space-y-6 text-center flex flex-col items-center justify-center",
             "w-full lg:justify-self-center",

@@ -62,20 +62,18 @@ export default function GridPartners({
   const carouselRef = React.useRef<HTMLDivElement>(null)
   const itemRef = React.useRef<HTMLDivElement>(null)
 
-  // Duplicar partners para crear efecto infinito
   const duplicatedPartners = React.useMemo(() => {
     return [...partners, ...partners, ...partners]
   }, [partners])
 
-  // Calcular items por vista según el tamaño de pantalla
   React.useEffect(() => {
     const updateItemsPerView = () => {
       if (window.innerWidth < 640) {
-        setItemsPerView(1) // móvil
+        setItemsPerView(1)
       } else if (window.innerWidth < 1024) {
-        setItemsPerView(2) // tablet
+        setItemsPerView(2)
       } else {
-        setItemsPerView(4) // desktop
+        setItemsPerView(4)
       }
     }
 
@@ -84,11 +82,10 @@ export default function GridPartners({
     return () => window.removeEventListener("resize", updateItemsPerView)
   }, [])
 
-  // Recalcular ancho cuando cambia itemsPerView o el tamaño de ventana
   React.useEffect(() => {
     const updateItemWidth = () => {
       if (itemRef.current && carouselRef.current) {
-        const gap = 24 // 1.5rem = 24px
+        const gap = 24
         const containerWidth = carouselRef.current.offsetWidth
         const calculatedWidth = (containerWidth - (itemsPerView - 1) * gap) / itemsPerView
         setItemWidth(calculatedWidth + gap)
@@ -100,17 +97,15 @@ export default function GridPartners({
     return () => window.removeEventListener("resize", updateItemWidth)
   }, [itemsPerView])
 
-  // Calcular el ancho real de cada item
   React.useEffect(() => {
     if (itemRef.current && carouselRef.current) {
-      const gap = 24 // 1.5rem = 24px
+      const gap = 24
       const containerWidth = carouselRef.current.offsetWidth
       const calculatedWidth = (containerWidth - (itemsPerView - 1) * gap) / itemsPerView
       setItemWidth(calculatedWidth + gap)
     }
   }, [itemsPerView, partners.length])
 
-  // Inicializar en el segundo conjunto de partners (el del medio)
   React.useEffect(() => {
     if (partners.length > 0) {
       const startIndex = partners.length
@@ -124,13 +119,10 @@ export default function GridPartners({
     setIsTransitioning(true)
     setCurrentIndex((prev) => {
       const newIndex = prev - 1
-      
-      // Si llegamos al inicio del segundo conjunto, saltar al final del segundo conjunto
       if (newIndex < partners.length) {
-        // Esperar a que termine la transición antes de saltar
         setTimeout(() => {
-          setIsTransitioning(false) // Desactivar transición para el salto
-          setCurrentIndex(partners.length * 2 - 1) // Saltar al final
+          setIsTransitioning(false)
+          setCurrentIndex(partners.length * 2 - 1)
         }, 500)
       } else {
         setTimeout(() => setIsTransitioning(false), 500)
@@ -146,13 +138,10 @@ export default function GridPartners({
     setIsTransitioning(true)
     setCurrentIndex((prev) => {
       const newIndex = prev + 1
-      
-      // Si llegamos al final del segundo conjunto, saltar al inicio del segundo conjunto
       if (newIndex >= partners.length * 2) {
-        // Esperar a que termine la transición antes de saltar
         setTimeout(() => {
-          setIsTransitioning(false) // Desactivar transición para el salto
-          setCurrentIndex(partners.length) // Saltar al inicio
+          setIsTransitioning(false)
+          setCurrentIndex(partners.length)
         }, 500)
       } else {
         setTimeout(() => setIsTransitioning(false), 500)
@@ -162,8 +151,8 @@ export default function GridPartners({
     })
   }
 
-  const canGoPrevious = true // Siempre puede ir hacia atrás (infinito)
-  const canGoNext = true // Siempre puede ir hacia adelante (infinito)
+  const canGoPrevious = true
+  const canGoNext = true
 
   return (
     <section
@@ -174,7 +163,6 @@ export default function GridPartners({
       id="partners"
     >
       <div className="container mx-auto px-4 sm:px-6">
-        {/* Header */}
         <div className="text-center mb-8 sm:mb-12 space-y-3 sm:space-y-4">
           <h2 id="partners-titulo" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#ff7300]">
             {titulo}
@@ -185,10 +173,7 @@ export default function GridPartners({
             </p>
           )}
         </div>
-
-        {/* Carrusel de Partners */}
         <div className="relative">
-          {/* Botón Anterior */}
           <Button
             variant="ghost"
             size="icon"
@@ -202,8 +187,6 @@ export default function GridPartners({
           >
             <ChevronLeft className="h-6 w-6 text-muted-foreground dark:text-muted-foreground" />
           </Button>
-
-          {/* Contenedor del Carrusel */}
           <div className={cn(
             "overflow-hidden",
             partners.length > itemsPerView ? "mx-8 sm:mx-12 md:mx-16" : "mx-0"
@@ -221,8 +204,7 @@ export default function GridPartners({
               }}
             >
               {duplicatedPartners.map((partner, index) => {
-                // Calcular el ancho considerando el gap
-                const gapSize = 1.5 // rem
+                const gapSize = 1.5
                 const totalGaps = itemsPerView - 1
                 const itemWidthCalc = `calc((100% - ${totalGaps * gapSize}rem) / ${itemsPerView})`
                 
@@ -271,8 +253,6 @@ export default function GridPartners({
               })}
             </div>
           </div>
-
-          {/* Botón Siguiente */}
           <Button
             variant="ghost"
             size="icon"
@@ -287,8 +267,6 @@ export default function GridPartners({
             <ChevronRight className="h-6 w-6 text-muted-foreground dark:text-muted-foreground" />
           </Button>
         </div>
-
-        {/* Indicadores de posición (dots) - basados en el índice real */}
         {partners.length > itemsPerView && (
           <div className="flex justify-center gap-2 mt-6 sm:mt-8">
             {partners.map((_, index) => {

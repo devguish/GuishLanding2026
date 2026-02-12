@@ -11,14 +11,12 @@ export async function getTexto(uid: string): Promise<TextoData | null> {
   try {
     const client = createClient();
     
-    // Obtener el documento por UID
     const document = await client.getByUID('texto', uid);
     
     if (!document) {
       return null;
     }
 
-    // Mapear los datos de Prismic a nuestro formato
     return {
       contenido: prismic.asText(document.data.contenido) || '',
       tamaño: (document.data.Tamano as TextoData['tamaño']) || 'mediano',

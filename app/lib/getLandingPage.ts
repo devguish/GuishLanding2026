@@ -39,8 +39,6 @@ export async function getLandingPage(uid: string = 'home'): Promise<LandingPageD
     try {
       document = await client.getByUID('landing', uid);
     } catch (error: any) {
-      // Si el documento no existe o hay error, retornar null silenciosamente
-      // Solo loguear en desarrollo para no llenar los logs de producción
       if (process.env.NODE_ENV === 'development') {
         console.warn(`No se pudo obtener landing page '${uid}' de Prismic:`, error?.message || error);
       }
@@ -51,7 +49,6 @@ export async function getLandingPage(uid: string = 'home'): Promise<LandingPageD
       return null;
     }
 
-    // Extender el tipo para incluir campos que pueden no estar en los tipos generados
     const data = document.data as prismic.Content.LandingDocumentData & {
       menu_items?: prismic.GroupField<{
         texto?: string;

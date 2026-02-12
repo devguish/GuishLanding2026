@@ -18,9 +18,7 @@ export default function Footer({ className }: FooterProps) {
     setMounted(true)
   }, [])
 
-  // Color de fondo según el tema
   const backgroundColor = mounted && theme === "dark" ? "#CBA98D" : "#FFF7F2"
-  // Color de texto según el tema
   const textColor = mounted && theme === "dark" ? "#FFFFFF" : "#927A5B"
 
   return (
@@ -33,7 +31,6 @@ export default function Footer({ className }: FooterProps) {
     >
       <div className="container mx-auto px-4 py-2 md:px-6">
         <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-4 lg:items-center lg:gap-8">
-          {/* Columna 4: Imágenes - en móvil/tablet aparece en fila separada debajo, en desktop a la derecha */}
           <div className="flex flex-row gap-3 sm:gap-4 items-center justify-center lg:items-center lg:justify-end lg:col-start-4 lg:row-start-1 order-last lg:order-none min-w-0">
             <a href="#inicio" className="relative w-20 h-20 sm:w-24 sm:h-24 lg:w-24 lg:h-24 xl:w-32 xl:h-32 shrink-0 block cursor-pointer">
               <Image
@@ -52,7 +49,6 @@ export default function Footer({ className }: FooterProps) {
               />
             </a>
           </div>
-          {/* Columna 1: Logo */}
           <div className="space-y-1 min-w-0">
             <div className="relative w-20 h-20">
               <Image
@@ -63,8 +59,6 @@ export default function Footer({ className }: FooterProps) {
               />
             </div>
           </div>
-
-          {/* Columna 2: Enlaces rápidos */}
           <div className="space-y-1 min-w-0">
             <h4 className="text-sm font-semibold" style={{ color: textColor }}>Enlaces Rápidos</h4>
             <ul className="space-y-1 text-sm">
@@ -85,8 +79,6 @@ export default function Footer({ className }: FooterProps) {
               </li>
             </ul>
           </div>
-
-          {/* Columna 3: Contacto */}
           <div className="space-y-1 min-w-0">
             <h4 className="text-sm font-semibold" style={{ color: textColor }}>Contacto</h4>
             <ul className="space-y-1 text-sm" style={{ color: textColor }}>
@@ -105,8 +97,6 @@ export default function Footer({ className }: FooterProps) {
           </div>
 
         </div>
-
-        {/* Copyright */}
         <div className="mt-2 pt-2 text-center text-sm" style={{ color: textColor }}>
           <p>© {currentYear} Todos los derechos reservados.</p>
         </div>

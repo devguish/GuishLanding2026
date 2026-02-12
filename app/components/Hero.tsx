@@ -37,7 +37,6 @@ export default function Hero({
     setMounted(true)
   }, [])
 
-  // Color de fondo según el tema
   const backgroundColor = mounted && theme === "dark" ? "#CBA98D" : "#FFF7F2"
 
   return (
@@ -61,7 +60,6 @@ export default function Hero({
         right: 0
       }}
     >
-      {/* Background Image */}
       {backgroundImage ? (
         <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
           <Image
@@ -90,7 +88,6 @@ export default function Hero({
         />
       )}
 
-      {/* Imagen de letras - mismo tamaño que la portada, responsive y de punta a punta */}
       {lettersImage && (
         <div 
           className="absolute z-[1]"

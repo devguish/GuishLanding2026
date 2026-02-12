@@ -39,7 +39,6 @@ export interface ButtonProps
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild, children, ...props }, ref) => {
-    // Si asChild es true, renderizar el children directamente con los estilos del button
     if (asChild && React.isValidElement(children)) {
       const child = children as React.ReactElement<{ className?: string }>
       return React.cloneElement(child, {

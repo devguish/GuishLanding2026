@@ -55,7 +55,6 @@ export default function GridPartners({
       id="partners"
     >
       <div className="container mx-auto px-4">
-        {/* Header */}
         <div className="text-center mb-12 space-y-4">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#ff7300]">
             {titulo}
@@ -66,8 +65,6 @@ export default function GridPartners({
             </p>
           )}
         </div>
-
-        {/* Grid de Partners */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {partners.map((partner) => (
             <Card key={partner.id} className="flex flex-col overflow-hidden hover:shadow-lg transition-shadow">

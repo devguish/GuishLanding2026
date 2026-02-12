@@ -32,13 +32,10 @@ export async function getConfiguracionGlobal(): Promise<ConfiguracionGlobalData 
   try {
     const client = createClient();
     
-    // Intentar obtener el documento, si no existe retornar null sin error
     let document = null;
     try {
       document = await client.getSingle('configuracion_global');
     } catch (error: any) {
-      // Si el documento no existe o hay error, retornar null silenciosamente
-      // Solo loguear en desarrollo para no llenar los logs de producción
       if (process.env.NODE_ENV === 'development') {
         console.warn('No se pudo obtener configuracion_global de Prismic:', error?.message || error);
       }
@@ -49,8 +46,6 @@ export async function getConfiguracionGlobal(): Promise<ConfiguracionGlobalData 
       return null;
     }
 
-    // Los campos logo y footer_contacto fueron movidos al tipo 'landing'
-    // Por lo tanto, no están disponibles en configuracion_global
     const data = document.data as prismic.Content.ConfiguracionGlobalDocumentData & {
       logo?: prismic.ImageField<never>;
       footer_contacto?: {

@@ -11,10 +11,8 @@ export default function GridCaracteristicasSliceComponent({
   const titulo = (slice.primary.titulo_seccion as string) || undefined
   const subtitulo = (slice.primary.subtitulo as string) || undefined
   
-  // Los items repetibles están en slice.primary.caracteristicas, no en slice.items
   const items = slice.primary.caracteristicas || []
   
-  // Filtrar items vacíos y mapear solo los que tienen datos
   const caracteristicas = items
     .filter((item) => {
       const titulo = (item.titulo as string)?.trim()

@@ -27,8 +27,6 @@ export default function BackgroundProvider({ fondoConfig, children }: Background
 
     const body = document.body
     const tipoFondo = fondoConfig?.tipo || "Gradiente"
-    
-    // Remover estilos anteriores
     body.style.background = ""
     body.style.backgroundImage = ""
     body.style.backgroundAttachment = ""
@@ -37,18 +35,15 @@ export default function BackgroundProvider({ fondoConfig, children }: Background
     body.style.backgroundRepeat = ""
 
     if (tipoFondo === "Color" && fondoConfig?.color) {
-      // Color sólido
       body.style.background = fondoConfig.color
       body.style.backgroundAttachment = "fixed"
     } else if (tipoFondo === "Imagen" && fondoConfig?.imagen) {
-      // Imagen de fondo
       body.style.backgroundImage = `url(${fondoConfig.imagen})`
       body.style.backgroundSize = "cover"
       body.style.backgroundPosition = "center"
       body.style.backgroundRepeat = "no-repeat"
       body.style.backgroundAttachment = "fixed"
     } else {
-      // Color de fondo por defecto
       if (theme === "dark") {
         body.style.background = "#CBA98D"
       } else {

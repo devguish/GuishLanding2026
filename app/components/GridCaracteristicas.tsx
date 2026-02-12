@@ -83,7 +83,6 @@ export default function GridCaracteristicas({
       id="caracteristicas"
     >
       <div className="container mx-auto px-4 sm:px-6">
-        {/* Header */}
         <div className="text-center mb-8 sm:mb-12 space-y-3 sm:space-y-4">
           <h2 id="presencia-y-alcance" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#ff7300]">
             {titulo}
@@ -94,8 +93,6 @@ export default function GridCaracteristicas({
             </p>
           )}
         </div>
-
-        {/* Grid de Características */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {caracteristicas.map((caracteristica) => (
             <Card

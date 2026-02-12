@@ -4,7 +4,6 @@ import "./globals.css";
 import { ThemeProvider } from "./components/ThemeProvider";
 import Preloader from "./components/Preloader";
 
-// Fuente Apercu Pro
 const apercu = localFont({
   src: [
     {

@@ -15,7 +15,6 @@ export default function SeccionInformativaSliceComponent({
   const ctaText = undefined
   const ctaHref = "#contacto"
   const mostrarCTA = false
-  // Normalizar el valor de posición (convertir a minúsculas)
   const posicionRaw = (slice.primary.posicion_imagen as string)?.toLowerCase() || "derecha"
   const alineacion = (posicionRaw === "izquierda" || posicionRaw === "derecha") 
     ? (posicionRaw as "izquierda" | "derecha") 

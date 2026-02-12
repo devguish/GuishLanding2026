@@ -39,7 +39,6 @@ export default function SeccionInformativa({
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center">
-            {/* Contenido */}
             <div className={cn(
               "space-y-4 sm:space-y-6",
               isLeft ? "order-2 md:order-2" : "order-2 md:order-1"
@@ -65,7 +64,6 @@ export default function SeccionInformativa({
               )}
             </div>
 
-            {/* Imagen */}
             <div className={cn(
               isLeft ? "order-1 md:order-1" : "order-1 md:order-2"
             )}>

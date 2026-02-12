@@ -18,7 +18,6 @@ export default function HeaderWithPrismic({ className, config }: HeaderWithPrism
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
   const [isScrolled, setIsScrolled] = React.useState(false)
 
-  // Usar datos de Prismic o valores por defecto
   const menuItems = config?.menuItems && config.menuItems.length > 0
     ? config.menuItems.map(item => ({ label: item.texto, href: item.enlace }))
     : [
@@ -40,13 +39,12 @@ export default function HeaderWithPrismic({ className, config }: HeaderWithPrism
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  // Función para scroll suave a secciones
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith("#")) {
       e.preventDefault()
       const element = document.querySelector(href)
       if (element) {
-        const headerOffset = 64 // Altura del header
+        const headerOffset = 64
         const elementPosition = element.getBoundingClientRect().top
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset
 
@@ -55,7 +53,6 @@ export default function HeaderWithPrismic({ className, config }: HeaderWithPrism
           behavior: "smooth",
         })
       }
-      // Cerrar menú móvil si está abierto
       setIsMenuOpen(false)
     }
   }
@@ -73,7 +70,6 @@ export default function HeaderWithPrismic({ className, config }: HeaderWithPrism
       }}
     >
       <div className="relative container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-        {/* Desktop Menu */}
         <nav className="hidden md:flex items-center space-x-4">
           {menuItems.map((item) => (
             <a
@@ -90,8 +86,6 @@ export default function HeaderWithPrismic({ className, config }: HeaderWithPrism
             </a>
           ))}
         </nav>
-
-        {/* Mobile Menu - Menu Button */}
         <div className="md:hidden flex items-center">
           <Button
             variant="ghost"
@@ -102,8 +96,6 @@ export default function HeaderWithPrismic({ className, config }: HeaderWithPrism
             {isMenuOpen ? <X className="h-6 w-6 text-white [text-shadow:_2px_2px_4px_rgba(0,0,0,0.3)]" /> : <Menu className="h-6 w-6 text-white [text-shadow:_2px_2px_4px_rgba(0,0,0,0.3)]" />}
           </Button>
         </div>
-
-        {/* Logo y Theme Toggle */}
         <div className="flex items-center space-x-4">
           <Link href="/" className="flex items-center space-x-2">
             {logoUrl ? (
@@ -129,8 +121,6 @@ export default function HeaderWithPrismic({ className, config }: HeaderWithPrism
           <ThemeToggle />
         </div>
       </div>
-
-      {/* Mobile Menu */}
       {isMenuOpen && (
         <div 
           className={cn(

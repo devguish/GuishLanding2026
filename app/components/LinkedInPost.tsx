@@ -3,17 +3,11 @@
 import * as React from "react"
 import { cn } from "@/app/lib/utils"
 
-/**
- * Extrae el activity ID de una URL de post de LinkedIn.
- * Formatos: .../posts/...activity-7080300564386889729... o .../feed/update/urn:li:activity:7080300564386889729
- */
 function getLinkedInActivityId(url: string | null | undefined): string | null {
   if (!url || typeof url !== "string") return null
   const trimmed = url.trim()
-  // urn:li:activity:1234567890
   const urnMatch = trimmed.match(/urn:li:activity:(\d+)/i)
   if (urnMatch) return urnMatch[1]
-  // activity-1234567890
   const activityMatch = trimmed.match(/activity-(\d+)/i)
   if (activityMatch) return activityMatch[1]
   return null
